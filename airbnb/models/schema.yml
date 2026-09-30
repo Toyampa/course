@@ -4,6 +4,8 @@ models:
       - minimum_row_count:
           arguments:
             min_row_count: 1000
+          severity: error
+         
     columns:
       - name: listing_id
         data_tests:
@@ -35,12 +37,15 @@ models:
     columns:
       - name: host_id
         data_type: integer
+        constraints:
+          - type: not_null
         data_tests:
           - unique
-          - not_null
 
       - name: host_name
         data_type: string
+        contraints:
+          - type: not_null
         data_tests:
           - not_null
       
